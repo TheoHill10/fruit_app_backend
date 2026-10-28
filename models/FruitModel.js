@@ -12,7 +12,7 @@ class Fruit { //like a blueprint for making objects, when using it many times
     } //this is everything our API has
 
     static async showAll() {
-        const response = await db.query('SELECT * FROM fruits; ORDER BY fruit_name')
+        const response = await db.query('SELECT * FROM fruits ORDER BY fruit_name;')
         return response.rows.map(fruit => new Fruit(fruit))
     }
 
